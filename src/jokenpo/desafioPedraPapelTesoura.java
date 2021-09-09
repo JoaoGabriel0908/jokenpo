@@ -24,7 +24,7 @@ public class desafioPedraPapelTesoura {
 		System.out.print("Qual a sua escolha? ");
 		int ppt = leitor.nextInt();
 		
-		System.out.println("Escolha do Computador: " + valorSorteado);
+		System.out.println("Escolha do Comptador: " + valorSorteado);
 		leitor.close();
 		
 		if (ppt == 1 && valorSorteado == 3 ) {
