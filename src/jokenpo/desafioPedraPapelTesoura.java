@@ -16,9 +16,9 @@ public class desafioPedraPapelTesoura {
 		int maior;
 		int voceGanhou = 1 ;
 		int computadorGanhou = 1 ;
-		int partidas = 1;
-		int empate = 1;
-		int rodadas = 1;
+		int partidas = 0;
+		int empate = 0;
+		int rodadas = 0;
 		
 		System.out.println("--------------");
 		System.out.println("J O K E N P O ");
@@ -32,13 +32,21 @@ public class desafioPedraPapelTesoura {
 		System.out.println("--------------");
 		System.out.println();
 		
-		while(partidas <= 1) {	
+			
 		
-			System.out.print("Quantas partidas você quer jogar? " );
-			partidas = leitor.nextInt();
+		System.out.print("Quantas partidas você quer jogar? " );
+		while(partidas >= 0) {
+		partidas = leitor.nextInt();
+		
 			if (partidas % 2 == 1) {
 		
-		while (voceGanhou < partidas && computadorGanhou < partidas ) {
+		while (voceGanhou < partidas && computadorGanhou < partidas && empate < partidas) {
+			System.out.println();
+			System.out.println("--------------");
+			System.out.println("1 - Pedra");
+			System.out.println("2 - Papel");
+			System.out.println("3 - Tesoura");
+			System.out.println("--------------");
 			System.out.println();
 			System.out.print("Qual a sua escolha? ");
 			int ppt = leitor.nextInt();
@@ -50,59 +58,57 @@ public class desafioPedraPapelTesoura {
 			if (ppt == 1 && valorSorteado == 3 ) {
 				System.out.println("Você escolheu pedra");
 				System.out.println("O computador escolheu Tesoura");
-				System.out.println(" Você venceu " + voceGanhou++);
+				System.out.println("Você venceu "); voceGanhou++;
 				
 			}else if (ppt == 1 && valorSorteado == 2) {
 				System.out.println("Você escolheu pedra");
 				System.out.println("O computador escolheu papel");
-				System.out.println(" Computador ganhou " + computadorGanhou++);
+				System.out.println("Computador ganhou "); computadorGanhou++;
 				
 			}else if (ppt == 2 && valorSorteado == 1) {
 				System.out.println("Você escolheu papel");
 				System.out.println("O computador escolheu pedra");
-				System.out.println(" Você venceu " + voceGanhou++);
+				System.out.println("Você venceu ");  voceGanhou++;
 				
 			}else if (ppt == 2 && valorSorteado == 3) {
 				System.out.println("Você escolheu papel");
 				System.out.println("O computador escolheu tesoura");
-				System.out.println(" Computador ganhou " + computadorGanhou++);
+				System.out.println("Computador ganhou "); computadorGanhou++;
 				
 			}else if (ppt == 3 && valorSorteado == 1) {
 				System.out.println("Você escolheu tesoura");
 				System.out.println("O computador escolheu pedra");
-				System.out.println(" Você venceu " + voceGanhou++);	
+				System.out.println(" Computador ganhou "); computadorGanhou++;	
 				
 			}else if (ppt == 3 && valorSorteado == 2) {
 				System.out.println("Você escolheu tesoura");
 				System.out.println("O computador escolheu papel");
-				System.out.println("Computador ganhou" + computadorGanhou++);	
+				System.out.println(" Você Venceu "); voceGanhou++;	
 			} else {
 				System.out.println("Você escolheu: " + ppt);
 				System.out.println("O computador escolheu: " + valorSorteado);
-				System.out.println(" EMPATE " + empate++);
+				System.out.println(" EMPATE "); empate++;
 			
-			}
-			if (empate <= partidas) {
-				partidas--;
+			}			
+		}	
+			if (computadorGanhou > voceGanhou) {
+				System.out.print("O Computador Venceu");
+			} else if (empate == partidas || voceGanhou + computadorGanhou + empate == partidas) {
+				partidas++;
+				System.out.println("Partida de Ouro!");
 			} else {
-				
+				System.out.println("Você Venceu");
 			}
-		
 			
-			
-		
-		}
-		
-			leitor.close();
 		}  else  {
 			System.out.println("Para haver um ganhador, este número precisa ser ímpar. Selecione novamente: ");
-			partidas++;
 		}
-		
-			
 		}
+		leitor.close();
 	}
+	
 }
+
 		
 	
 	
